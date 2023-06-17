@@ -10,11 +10,11 @@ secret_key = urandom(16)
 
 cipher = AES(secret_key)
 
-ciphertext = AES.encrypt(b"a" * 16)
+ciphertext = cipher.encrypt(b"a" * 16)
 
 print(ciphertext)
 
-plaintext = AES.decrypt(ciphertext)
+plaintext = cipher.decrypt(ciphertext)
 
 print(plaintext)
 ```
@@ -45,11 +45,11 @@ s_box = [
 
 cipher = AES(key_bit_length=128, use_round_key=False, use_shift_rows=False, custom_s_box=s_box)
 
-ciphertext = AES.encrypt(b"a" * 16)
+ciphertext = cipher.encrypt(b"a" * 16)
 
 print(ciphertext)
 
-plaintext = AES.decrypt(ciphertext)
+plaintext = cipher.decrypt(ciphertext)
 
 print(plaintext)
 ```
